@@ -1,0 +1,167 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: "Harmattan", "Courier";
+	overflow-y: scroll;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+table{
+	width: 95%;
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+table, th, td{
+	border: 1px solid black;
+}
+
+.name{
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
+
+#sidebar{
+	background-color: rgba(100,100,100,0.2);
+	border-radius: 5px;
+	height: 100vh;
+	width: 30%;
+	margin-right: 2%;
+	float: left;
+	box-shadow: 1px 1px 1px 1px grey;
+}
+
+@media screen and (min-width: 600px){
+	#sidebar{
+		width: 20%;
+	}
+}
+
+#BirbLang{
+	width: 75%;
+	height: auto;
+}
+
+#table{
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+.index{
+	font-size: 110%;
+	color: #6979e1;
+	width: fit-content;
+}
+
+@media screen and (max-width: 700px){
+	.index{
+		font-size: 100%;
+	}
+}
+
+.index:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#main{
+	position: relative;
+	width: 65%;
+	height: auto;
+	min-height: 90vh;
+	background-color: rgba(100,100,100,0.15);
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-right: 2%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	overflow-x: hidden;
+	float: right;
+	box-shadow: 2px 2px 1px 1px grey;
+	display: block;
+}
+
+@media screen and (min-width: 600px){
+	#main{
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 500px){
+	#main{
+		overflow-x: scroll;
+	}
+}
+
+#title{
+	font-weight: bold;
+	font-size: 200%;
+	position: relative;
+	margin-left: 5%;
+	margin-top: 20%;
+	height: fit-content;
+}
+
+@media screen and (min-width: 1100px){
+	#title{
+		margin-top: 15%;
+	}
+}
+
+#text_stuff{
+	position: relative;
+	margin-left: 5%;
+	height: fit-content;
+	width: 90%;
+	font-size: 125%;
+}
+
+.code{
+	border-left: 2px solid red;
+	font-style: italic;
+	background-color: #bbb;
+	width: auto;
+	height: fit-content;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.output{
+	border-left: 2px solid blue;
+	font-style: italic;
+	background-color: #bbb;
+	width: auto;
+	height: fit-content;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.download{
+	text-decoration: none;
+	width: fit-content;
+	height: fit-content;
+}
+
+.download:hover{
+	text-decoration: underline;
+}
+
+.download-box-thing{
+	background-color: rgba(75, 75, 175, 0.4);
+	height: 5%;
+	width: fit-content;
+	border-radius: 10px;
+	margin: auto;
+	border: 1px solid black;
+}
