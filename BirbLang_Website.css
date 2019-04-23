@@ -35,7 +35,9 @@ table, th, td{
 #sidebar{
 	background-color: rgba(100,100,100,0.2);
 	border-radius: 5px;
-	height: 100vh;
+	display: block;
+	height: auto;
+	min-height: 100vh;
 	width: 30%;
 	margin-right: 2%;
 	float: left;
@@ -101,6 +103,7 @@ table, th, td{
 @media screen and (max-width: 500px){
 	#main{
 		overflow-x: scroll;
+		margin-top: 7%;
 	}
 }
 
