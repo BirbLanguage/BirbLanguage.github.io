@@ -152,8 +152,9 @@ table, th, td{
 
 .download{
 	text-decoration: none;
-	width: fit-content;
-	height: fit-content;
+	text-align: center;
+	width: auto;
+	height: auto;
 }
 
 .download:hover{
@@ -163,7 +164,7 @@ table, th, td{
 .download-box-thing{
 	background-color: rgba(75, 75, 175, 0.4);
 	height: 5%;
-	width: fit-content;
+	width: 50%;
 	border-radius: 10px;
 	margin: auto;
 	border: 1px solid black;
