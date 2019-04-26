@@ -172,26 +172,26 @@ table, th, td{
 
 /* stylesheets needed for code highlighting*/
 
-comment {
+.comment {
 	color: grey;
 }
 
-key {
+.key {
 	color: rgba(75,57,200);
 }
 
-bitwise {
+.bitwise {
 	color: #339933;
 }
 
-math {
+.math {
 	color: #d82a1d;
 }
 
-num {
+.num {
 	color: #ff0000;
 }
 
-string {
+.string {
 	color: rgba(25,125,36);
 }
