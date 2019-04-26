@@ -177,11 +177,11 @@ comment {
 }
 
 key {
-	color: blue;
+	color: rgba(75,57,200);
 }
 
- bitwise {
-	color: purple
+bitwise {
+	color: #339933;
 }
 
 math {
@@ -189,9 +189,9 @@ math {
 }
 
 num {
-	color: rgb(247, 119, 15)
+	color: #ff0000;
 }
 
 string {
-	color: green;
+	color: rgba(25,125,36);
 }
