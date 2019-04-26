@@ -169,3 +169,29 @@ table, th, td{
 	margin: auto;
 	border: 1px solid black;
 }
+
+/* stylesheets needed for code highlighting*/
+
+comment {
+	color: grey;
+}
+
+key {
+	color: blue;
+}
+
+ bitwise {
+	color: purple
+}
+
+math {
+	color: #d82a1d;
+}
+
+num {
+	color: rgb(247, 119, 15)
+}
+
+string {
+	color: green;
+}
