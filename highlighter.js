@@ -1,45 +1,24 @@
-const keywords = ['hatch egg', 'slep', 'squawk', 'chirp', 'new birb', 'is flying while', 'is', 'now', 'peck', 'feed',  'just',  'desires seed', 'eat seed if', 'throw seed away', 'no longer deesires seed',  'stop flying'];
-const math_words = ['unfloof', 'megafloof', 'megaunfloof', 'ultrafloof', 'ultraunfloof', 'by', 'floof'];
-const bitwise = ['or', 'and', 'not', 'floofy', 'floofier', 'as', 'than'];
+const comment = /#.*/g;
+const strDblQuoted = /(?<!#.*)\".*\"/g;
+const strSingleQuoted = /(?<!#.*)\'.*\'/g;
+const nums = /(?<!([a-zA-Z])|#.*|[\"\'])\d(?![a-zA-Z])/g;
+const keywords = /(?<!([a-zA-Z])|#.*|[\"\'].*)(hatch egg|slep|squawk|chirp|new birb|is flying while|is|now|peck|feed|just|desires seed|eat eat if|throw seed away|no longer desires|stop flying)(?![a-zA-Z])/g; 
+const bitwise = /(?<!([a-zA-Z])|#.*|[\"\'])(or|and|not|floofy|floofier|as|than)(?![a-zA-Z])/g;
+const math_words = /(?<!([a-zA-Z])|#.*|[\"\'])(floof|unfloof|megafloof|megaunfloof|ultrafloof|ultraunfloof|by)(?![a-zA-Z])/g;
 
 function highlight(code) {
     
-    let new_code = code.replace(/<br>/g, '<br />' );
+    let new_code = code;
 
-    
-    //highlighting strings 
-    const strMatches = new_code.match(/[\"\'].*[\"\']/g);
-    if(strMatches!=null&&strMatches.length!=0) {
-        for (let match of strMatches) {
-            new_code = new_code.replace(new RegExp(match,"g"),"<string>"+match+"</string>");
-        }
-    }
-    
-    
-    
-    //highlighting comments
-    new_code = new_code.replace(/#/gi, "<comment>#").replace(/(?<=#.*)<br \/>/gi,'</comment><br />');
-    
-    //highlighting keywords, math words and bitwise operations
-    for (let key of keywords) {
-        new_code = new_code.replace(new RegExp(key, 'g'), "<key>"+key+'</key>');
-    }
-    
-    for (let key of bitwise) {
-        new_code = new_code.replace(new RegExp(key, 'g'), "<bitwise>"+key+'</bitwise>');
-    }
-    
-    for (let key of math_words) {
-        new_code = new_code.replace(new RegExp(key, 'g'), "<math>"+key+'</math>');
-    }
-    
-    //highlighting numbers
-    for (let n=0; n<=9; n++) {
-        //new_code = new_code.replace(new RegExp(" (?<!<.*>)"+n+"(?!<\/.*>)", 'g'), '<num>'+n+'</num>');
-        new_code = new_code.replace(new RegExp("((?<=<.*>.*<\/.*>.*)|(?<!<.*>.*))"+n+"((?!.*<\/.*>)|(?=<.*>.*<\/.*>.*))", 'gi'), '<num>'+n+'</num>');
-        console.log(new_code)
-    }
-    
-    return new_code;
+    new_code = new_code.replace(keywords, '<key>$&</key>') //highlighting keywords
+                        .replace(strDblQuoted, '<string>\"$&\"</string>')     // highlighting strings
+                        .replace(strSingleQuoted, "<string>\'$&\'</string>")
+                        .replace(comment, '<comment>$&</comment>') //highlighting comments
+                        .replace(nums, '<num>$&</num>')     //highlighting numbers
+                        .replace(bitwise, '<bitwise>$&</bitwise>')  //highlighting bitwise operators
+                        .replace(math_words, '<math>$&</math>'); //highlighting keywords of mathematical expressions
+                             
+    return new_code.replace(/\n/g,'<br>')
+    ;
 
 }

@@ -99,7 +99,7 @@ function examples(){
 function highlightAll() {
 	let codes = document.querySelectorAll('.code');
 	codes.forEach(x => {
-		x.innerHTML = highlight(x.innerHTML);
+		x.innerHTML = highlight(x.innerText);
 	})
 }
 
