@@ -7,7 +7,7 @@ const bitwise = /(?<!([a-zA-Z])|#.*|[\"\'])(or|and|not|floofy|floofier|as|than|j
 const math_words = /(?<!([a-zA-Z])|#.*|[\"\'])(floof|unfloof|megafloof|megaunfloof|ultrafloof|ultraunfloof|by)(?![a-zA-Z])/g;
 
 function highlight(code) {
-    
+
     let new_code = code;
 
     new_code = new_code.replace(keywords, '<key>$&</key>') //highlighting keywords
@@ -17,8 +17,8 @@ function highlight(code) {
                         .replace(nums, '<num>$&</num>')     //highlighting numbers
                         .replace(bitwise, '<bitwise>$&</bitwise>')  //highlighting bitwise operators
                         .replace(math_words, '<math>$&</math>'); //highlighting keywords of mathematical expressions
-                             
+
     return new_code.replace(/\n/g,'<br>')
     ;
 
-}
+} 
