@@ -10,13 +10,13 @@ function highlight(code) {
 
     let new_code = code;
 
-    new_code = new_code.replace(keywords, '<div class="key">$&</div>') //highlighting keywords
-                        .replace(strDblQuoted, '<div class="string">$&</div>')     // highlighting strings
-                        .replace(strSingleQuoted, '<div class="string">$&</div>')
-                        .replace(comment, '<div class="comment">$&</div>') //highlighting comments
-                        .replace(nums, '<div class="num">$&</div>')     //highlighting numbers
-                        .replace(bitwise, '<div class="bitwise">$&</div>')  //highlighting bitwise operators
-                        .replace(math_words, '<div class="math">$&</div>'); //highlighting keywords of mathematical expressions
+    new_code = new_code.replace(keywords, '<key>$&</key>') //highlighting keywords
+                        .replace(strDblQuoted, '<string>$&</string>')     // highlighting strings
+                        .replace(strSingleQuoted, '<string>$&</string>')
+                        .replace(comment, '<comment>$&</comment>') //highlighting comments
+                        .replace(nums, '<num>$&</num>')     //highlighting numbers
+                        .replace(bitwise, '<bitwise>$&</bitwise>')  //highlighting bitwise operators
+                        .replace(math_words, '<math>$&</math>'); //highlighting keywords of mathematical expressions
 
     return new_code.replace(/\n/g,'<br>')
     ;
